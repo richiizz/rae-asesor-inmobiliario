@@ -11,6 +11,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap"
         rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP893SWK8F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-TP893SWK8F');
+    </script>
     <style>
         :root {
 
@@ -856,7 +865,7 @@
             color: var(--color-dark);
         }
 
-        /* Resto de estilos... (mantener los originales) */
+        /* Resto de estilos...  */
 
         /* Ofertas */
         #ofertas {
@@ -1299,7 +1308,7 @@
         }
 
         /* ============================================
-           SECCIÓN "POR QUÉ ELEGIRNOS" - VERSIÓN MEJORADA
+           SECCIÓN "POR QUÉ ELEGIRNOS" - 
         ============================================ */
         .why-choose-us {
             padding: 5rem 5%;
@@ -1734,7 +1743,7 @@
         }
 
         /* ============================================
-           FILTROS ULTRA SIMPLES (PARA TODAS LAS EDADES)
+           FILTROS ULTRA SIMPLES 
         ============================================ */
         .filters-container {
             background: var(--color-white);
@@ -2509,6 +2518,45 @@
             margin-bottom: 1rem;
         }
 
+        /* Etiqueta "En Preventa" para proyectos vigentes */
+        .proyecto-logo-card {
+            position: relative;
+            overflow: visible;
+        }
+
+        .proyecto-badge {
+            position: absolute;
+            top: -0.5rem;
+            right: -0.5rem;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 0.3rem 0.7rem;
+            border-radius: 15px;
+            font-size: 0.6rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            box-shadow: 0 3px 10px rgba(231, 76, 60, 0.4);
+            z-index: 3;
+            text-transform: uppercase;
+            white-space: nowrap;
+            animation: pulseBadge 2s infinite;
+        }
+
+        @keyframes pulseBadge {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
         /* ============================================
            RESPONSIVE MÓVIL FINAL V4
            NO ALTERA WEB/PC/LAPTOP
@@ -2600,7 +2648,12 @@
             }
 
             .about-image {
-                height: 180px !important;
+                height: auto !important;
+                aspect-ratio: 3/4 !important;
+                max-height: 350px !important;
+                border-radius: 12px !important;
+                background-size: cover !important;
+                background-position: center top !important;
             }
 
             .about-text h3 {
@@ -2640,6 +2693,14 @@
             .proyecto-logo-card {
                 padding: 0.8rem !important;
                 min-height: 100px !important;
+            }
+
+            .proyecto-badge {
+                font-size: 0.45rem !important;
+                padding: 0.2rem 0.4rem !important;
+                top: -0.3rem !important;
+                right: -0.3rem !important;
+                gap: 0.2rem !important;
             }
 
             /* === 27: SERVICIOS 2col x 3filas - AMBAS PÁGINAS como un solo grid === */
@@ -3321,24 +3382,28 @@
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div class="proyecto-fallback"><i class="fas fa-mountain"></i></div><span>El Refugio</span>
             </div>
-            <div class="proyecto-logo-card"><img src="imagenes/logos-proyectos/industrias-100.webp" alt="Industrias 100"
+            <div class="proyecto-logo-card"><span class="proyecto-badge"><i class="fas fa-fire"></i> Preventa</span><img
+                    src="imagenes/logos-proyectos/industrias-100.webp" alt="Industrias 100"
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div class="proyecto-fallback"><i class="fas fa-industry"></i></div><span>Industrias 100</span>
             </div>
-            <div class="proyecto-logo-card"><img src="imagenes/logos-proyectos/las-torres.webp" alt="Las Torres"
+            <div class="proyecto-logo-card"><span class="proyecto-badge"><i class="fas fa-fire"></i> Preventa</span><img
+                    src="imagenes/logos-proyectos/las-torres.webp" alt="Las Torres"
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div class="proyecto-fallback"><i class="fas fa-building"></i></div><span>Las Torres de Huaral</span>
             </div>
-            <div class="proyecto-logo-card"><img src="imagenes/logos-proyectos/ciudad-de-oro.webp" alt="Ciudad de Oro"
+            <div class="proyecto-logo-card"><span class="proyecto-badge"><i class="fas fa-fire"></i> Preventa</span><img
+                    src="imagenes/logos-proyectos/ciudad-de-oro.webp" alt="Ciudad de Oro"
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div class="proyecto-fallback"><i class="fas fa-coins"></i></div><span>Ciudad de Oro</span>
             </div>
-            <div class="proyecto-logo-card"><img src="imagenes/logos-proyectos/praderas-costa-azul.webp"
-                    alt="Praderas Costa Azul"
+            <div class="proyecto-logo-card"><span class="proyecto-badge"><i class="fas fa-fire"></i> Preventa</span><img
+                    src="imagenes/logos-proyectos/praderas-costa-azul.webp" alt="Praderas Costa Azul"
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div class="proyecto-fallback"><i class="fas fa-coins"></i></div><span>Praderas Costa Azul</span>
             </div>
-            <div class="proyecto-logo-card"><img src="imagenes/logos-proyectos/costa-beach.webp" alt="Costa Beach"
+            <div class="proyecto-logo-card"><span class="proyecto-badge"><i class="fas fa-fire"></i> Preventa</span><img
+                    src="imagenes/logos-proyectos/costa-beach.webp" alt="Costa Beach"
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div class="proyecto-fallback"><i class="fas fa-umbrella-beach"></i></div><span>Costa Beach</span>
             </div>
@@ -4650,7 +4715,11 @@
                         class="fab fa-linkedin"></i></a>
             </div>
             <p>&copy; 2024 Asesoría Inmobiliaria Premium. Todos los derechos reservados.</p>
-            <p>📧 <a href="mailto:rae.asesorinmobiliario@gmail.com">rae.asesorinmobiliario@gmail.com</a> | 📱 +51
+            <p>📧 <a
+                    href="/cdn-cgi/l/email-protection#502231357e312335233f22393e3d3f32393c393122393f10373d31393c7e333f3d"><span
+                        class="__cf_email__"
+                        data-cfemail="cfbdaeaae1aebcaabca0bda6a1a2a0ada6a3a6aebda6a08fa8a2aea6a3e1aca0a2">[email&#160;protected]</span></a>
+                | 📱 +51
                 934917794</p>
         </div>
     </footer>
@@ -4663,6 +4732,7 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
@@ -5758,13 +5828,4 @@
                 var sp1 = document.getElementById('serviciosPage1');
                 var bp1 = document.getElementById('beneficiosPage1');
                 if (sp1) sp1.style.setProperty('display', 'contents', 'important');
-                if (bp1) bp1.style.setProperty('display', 'contents', 'important');
-            }
-        }
-        document.addEventListener('DOMContentLoaded', ajustarParaMovil);
-        window.addEventListener('resize', ajustarParaMovil);
-    </script>
-
-</body>
-
-</html>
+    
