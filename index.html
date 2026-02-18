@@ -173,18 +173,19 @@
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
+            gap: 1.3rem;
+            flex-wrap: nowrap;
         }
 
         nav a {
             color: var(--color-white);
             text-decoration: none;
             font-weight: 400;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
+            font-size: 0.82rem;
+            letter-spacing: 0.3px;
             transition: all 0.3s ease;
             position: relative;
+            white-space: nowrap;
         }
 
         nav a::after {
@@ -204,8 +205,9 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, var(--color-primary) 0%, #2c5f7f 100%);
+            width: 100%;
+            min-height: 100vh;
+            background: url('imagenes/hero-fondo.webp') center center / cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -222,28 +224,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background:
-                repeating-linear-gradient(90deg,
-                    transparent,
-                    transparent 50px,
-                    rgba(255, 255, 255, 0.03) 50px,
-                    rgba(255, 255, 255, 0.03) 51px),
-                repeating-linear-gradient(0deg,
-                    transparent,
-                    transparent 50px,
-                    rgba(255, 255, 255, 0.03) 50px,
-                    rgba(255, 255, 255, 0.03) 51px);
-            animation: gridMove 20s linear infinite;
-        }
-
-        @keyframes gridMove {
-            0% {
-                transform: translate(0, 0);
-            }
-
-            100% {
-                transform: translate(50px, 50px);
-            }
+            background: linear-gradient(135deg, rgba(26, 58, 82, 0.55) 0%, rgba(44, 95, 127, 0.45) 100%);
+            z-index: 1;
         }
 
         .hero-content {
@@ -273,6 +255,7 @@
             margin-bottom: 1.5rem;
             line-height: 1.1;
             letter-spacing: -1px;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
         }
 
         .hero .accent {
@@ -334,6 +317,7 @@
             max-width: 700px;
             margin: 0 auto 2.5rem;
             opacity: 0.95;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
         }
 
         .hero-subtitle strong {
@@ -540,6 +524,13 @@
             padding: 5rem 5%;
             max-width: 1400px;
             margin: 0 auto;
+        }
+
+        section.hero {
+            max-width: none;
+            padding: 0;
+            padding-top: 70px;
+            margin: 0;
         }
 
         h2 {
@@ -2576,8 +2567,15 @@
 
             /* === HERO === */
             .hero {
-                padding: 1.5rem 4% 1rem !important;
+                padding: 60px 0 1rem 0 !important;
                 min-height: auto !important;
+                width: 100% !important;
+                max-width: none !important;
+                margin: 0 !important;
+            }
+
+            .hero-content {
+                padding: 0 4% !important;
             }
 
             .hero-badge {
@@ -3238,8 +3236,8 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#sobre-mi">Sobre Mí</a></li>
                 <li><a href="#nuestros-proyectos">Proyectos</a></li>
-                <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#propiedades">Propiedades</a></li>
+                <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#por-que-elegirnos">¿Por qué eligirnos?</a></li>
                 <li><a href="#proceso">Proceso</a></li>
                 <li><a href="#testimonios">Testimonios</a></li>
@@ -3406,70 +3404,6 @@
                     src="imagenes/logos-proyectos/costa-beach.webp" alt="Costa Beach"
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div class="proyecto-fallback"><i class="fas fa-umbrella-beach"></i></div><span>Costa Beach</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Servicios -->
-    <section id="servicios">
-        <h2>Servicios Profesionales</h2>
-        <div style="max-width: 1200px; margin: 2rem auto 0; position: relative; padding: 0 60px;">
-            <button onclick="cambiarPaginaServicios(-1)"
-                style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 10; background: var(--color-primary); color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; font-size: 1.1rem; box-shadow: 0 3px 12px rgba(0,0,0,0.2); transition: all 0.3s;"
-                onmouseover="this.style.background='var(--color-accent)'"
-                onmouseout="this.style.background='var(--color-primary)'"><i class="fas fa-chevron-left"></i></button>
-            <button onclick="cambiarPaginaServicios(1)"
-                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); z-index: 10; background: var(--color-primary); color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; font-size: 1.1rem; box-shadow: 0 3px 12px rgba(0,0,0,0.2); transition: all 0.3s;"
-                onmouseover="this.style.background='var(--color-accent)'"
-                onmouseout="this.style.background='var(--color-primary)'"><i class="fas fa-chevron-right"></i></button>
-
-            <!-- Página 1: Servicios 1-3 -->
-            <div id="serviciosPage1" class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-home"></i></div>
-                    <h3>Compra de Propiedades</h3>
-                    <p>Te ayudo a encontrar la casa de tus sueños con las mejores opciones del mercado y precios
-                        competitivos.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-handshake"></i></div>
-                    <h3>Venta de Inmuebles</h3>
-                    <p>Comercializo tu propiedad con estrategias efectivas de marketing para obtener el mejor precio.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-key"></i></div>
-                    <h3>Alquiler</h3>
-                    <p>Gestiono el alquiler de propiedades con contratos seguros y arrendatarios confiables.</p>
-                </div>
-            </div>
-
-            <!-- Página 2: Servicios 4-6 -->
-            <div id="serviciosPage2" class="services-grid" style="display: none;">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
-                    <h3>Proyectos en Planos</h3>
-                    <p>Acceso exclusivo a habilitaciones Urbanas y desarrollos inmobiliarios en preventa con facilidades
-                        de pago.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-file-contract"></i></div>
-                    <h3>Trámites Legales</h3>
-                    <p>Gestión completa de documentación, contratos y procesos legales para una transacción segura.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Inversiones</h3>
-                    <p>Asesoría especializada para invertir en bienes raíces y generar rentabilidad a largo plazo.</p>
-                </div>
-            </div>
-
-            <!-- Dots -->
-            <div style="display: flex; justify-content: center; gap: 10px; margin-top: 1.5rem;">
-                <span id="svcDot1" onclick="irPaginaServicios(1)"
-                    style="width: 14px; height: 14px; border-radius: 50%; background: var(--color-accent); cursor: pointer; transition: all 0.3s; transform: scale(1.2);"></span>
-                <span id="svcDot2" onclick="irPaginaServicios(2)"
-                    style="width: 14px; height: 14px; border-radius: 50%; background: #ccc; cursor: pointer; transition: all 0.3s;"></span>
             </div>
         </div>
     </section>
@@ -3954,6 +3888,69 @@
                 <button class="view-more-btn" onclick="openModal('casa-playa')">VER MÁS DETALLES</button>
             </div>
 
+        </div>
+    </section>
+    <!-- Servicios -->
+    <section id="servicios">
+        <h2>Servicios Profesionales</h2>
+        <div style="max-width: 1200px; margin: 2rem auto 0; position: relative; padding: 0 60px;">
+            <button onclick="cambiarPaginaServicios(-1)"
+                style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 10; background: var(--color-primary); color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; font-size: 1.1rem; box-shadow: 0 3px 12px rgba(0,0,0,0.2); transition: all 0.3s;"
+                onmouseover="this.style.background='var(--color-accent)'"
+                onmouseout="this.style.background='var(--color-primary)'"><i class="fas fa-chevron-left"></i></button>
+            <button onclick="cambiarPaginaServicios(1)"
+                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); z-index: 10; background: var(--color-primary); color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; font-size: 1.1rem; box-shadow: 0 3px 12px rgba(0,0,0,0.2); transition: all 0.3s;"
+                onmouseover="this.style.background='var(--color-accent)'"
+                onmouseout="this.style.background='var(--color-primary)'"><i class="fas fa-chevron-right"></i></button>
+
+            <!-- Página 1: Servicios 1-3 -->
+            <div id="serviciosPage1" class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
+                    <h3>Compra de Propiedades</h3>
+                    <p>Te ayudo a encontrar la casa de tus sueños con las mejores opciones del mercado y precios
+                        competitivos.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Venta de Inmuebles</h3>
+                    <p>Comercializo tu propiedad con estrategias efectivas de marketing para obtener el mejor precio.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-key"></i></div>
+                    <h3>Alquiler</h3>
+                    <p>Gestiono el alquiler de propiedades con contratos seguros y arrendatarios confiables.</p>
+                </div>
+            </div>
+
+            <!-- Página 2: Servicios 4-6 -->
+            <div id="serviciosPage2" class="services-grid" style="display: none;">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+                    <h3>Proyectos en Planos</h3>
+                    <p>Acceso exclusivo a habilitaciones Urbanas y desarrollos inmobiliarios en preventa con facilidades
+                        de pago.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+                    <h3>Trámites Legales</h3>
+                    <p>Gestión completa de documentación, contratos y procesos legales para una transacción segura.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Inversiones</h3>
+                    <p>Asesoría especializada para invertir en bienes raíces y generar rentabilidad a largo plazo.</p>
+                </div>
+            </div>
+
+            <!-- Dots -->
+            <div style="display: flex; justify-content: center; gap: 10px; margin-top: 1.5rem;">
+                <span id="svcDot1" onclick="irPaginaServicios(1)"
+                    style="width: 14px; height: 14px; border-radius: 50%; background: var(--color-accent); cursor: pointer; transition: all 0.3s; transform: scale(1.2);"></span>
+                <span id="svcDot2" onclick="irPaginaServicios(2)"
+                    style="width: 14px; height: 14px; border-radius: 50%; background: #ccc; cursor: pointer; transition: all 0.3s;"></span>
+            </div>
         </div>
     </section>
     <section id="por-que-elegirnos" class="why-choose-us">
