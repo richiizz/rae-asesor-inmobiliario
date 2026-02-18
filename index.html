@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asesoría Inmobiliaria Premium</title>
+    <title>Asesoría Inmobiliaria Premium rae</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>(function () { emailjs.init('TU_PUBLIC_KEY'); })();</script>
@@ -522,8 +522,9 @@
         /* Secciones */
         section {
             padding: 5rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
+            max-width: none;
+            margin: 0;
+            width: 100%;
         }
 
         section.hero {
@@ -559,6 +560,8 @@
             border-radius: 20px;
             padding: 4rem;
             box-shadow: 0 10px 50px rgba(0, 0, 0, 0.08);
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .about-content {
@@ -580,6 +583,8 @@
             font-size: 6rem;
             color: var(--color-white);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            background-size: cover;
+            background-position: center;
         }
 
         .about-text h3 {
@@ -597,10 +602,7 @@
 
         /* Servicios */
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+            display: contents;
         }
 
         .service-card {
@@ -655,8 +657,8 @@
         /* Grid de Propiedades */
         .properties-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
             margin-top: 4rem;
         }
 
@@ -860,11 +862,29 @@
 
         /* Ofertas */
         #ofertas {
-            background: var(--color-primary);
+            background: url('imagenes/ofertas-fondo.webp') center center / cover no-repeat, var(--color-primary);
             color: var(--color-white);
-            border-radius: 20px;
-            padding: 4rem;
-            margin: 3rem auto;
+            border-radius: 0;
+            padding: 4rem 5%;
+            margin: 0;
+            width: 100%;
+            position: relative;
+        }
+
+        #ofertas::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 58, 82, 0.88);
+            z-index: 0;
+        }
+
+        #ofertas>* {
+            position: relative;
+            z-index: 1;
         }
 
         #ofertas h2 {
@@ -877,9 +897,12 @@
 
         .offers-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .offer-card {
@@ -1303,8 +1326,90 @@
         ============================================ */
         .why-choose-us {
             padding: 5rem 5%;
-            background: var(--color-light);
+            background: url('imagenes/imagenes-fondo/fondo-elegirnos.jpg') center center / cover no-repeat, var(--color-light);
             position: relative;
+        }
+
+        .why-choose-us::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(245, 243, 237, 0.88);
+            z-index: 0;
+        }
+
+        .why-choose-us>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Imagen de fondo para Nuestros Proyectos */
+        #nuestros-proyectos {
+            background: url('imagenes/imagenes-fondo/fondo-proyectos.webp') center center / cover no-repeat, linear-gradient(135deg, #e8f0fe, #f0f4f8) !important;
+            position: relative;
+        }
+
+        #nuestros-proyectos::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(232, 240, 254, 0.65);
+            z-index: 0;
+        }
+
+        #nuestros-proyectos>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Imagen de fondo para Propiedades */
+        #propiedades {
+            background: url('imagenes/imagenes-fondo/fondo-propiedades.webp') center center / cover no-repeat, var(--color-light);
+            position: relative;
+        }
+
+        #propiedades::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(245, 243, 237, 0.70);
+            z-index: 0;
+        }
+
+        #propiedades>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Imagen de fondo para Servicios */
+        #servicios {
+            background: url('imagenes/imagenes-fondo/fondo-servicios.jpg') center center / cover no-repeat, var(--color-light);
+            position: relative;
+        }
+
+        #servicios::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(245, 243, 237, 0.90);
+            z-index: 0;
+        }
+
+        #servicios>* {
+            position: relative;
+            z-index: 1;
         }
 
         .section-header {
@@ -1488,14 +1593,31 @@
         ============================================ */
         .testimonials-section {
             padding: 5rem 5%;
-            background: var(--color-white);
+            background: url('imagenes/imagenes-fondo/fondo-testimonios.webp') center center / cover no-repeat, var(--color-white);
+            position: relative;
+        }
+
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.81);
+            z-index: 0;
+        }
+
+        .testimonials-section>* {
+            position: relative;
+            z-index: 1;
         }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2.5rem;
-            max-width: 1400px;
+            max-width: 1300px;
             margin: 3rem auto 4rem;
         }
 
@@ -1931,6 +2053,71 @@
         .faq-section {
             padding: 5rem 5%;
             background: var(--color-light);
+            position: relative;
+        }
+
+        /* Imagen de fondo para Proceso */
+        #proceso {
+            background: url('imagenes/imagenes-fondo/fondo-proceso-asesoria.webp') center center / cover no-repeat, var(--color-light);
+        }
+
+        #proceso::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(245, 243, 237, 0.71);
+            z-index: 0;
+        }
+
+        #proceso>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Imagen de fondo para FAQ */
+        #faq {
+            background: url('imagenes/imagenes-fondo/fondo-faq.webp') center center / cover no-repeat, var(--color-light);
+        }
+
+        #faq::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(245, 243, 237, 0.71);
+            z-index: 0;
+        }
+
+        #faq>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Imagen de fondo para Contacto */
+        #contacto {
+            background: url('imagenes/imagenes-fondo/fondo-contactame.webp') center center / cover no-repeat, var(--color-light);
+            position: relative;
+        }
+
+        #contacto::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(245, 243, 237, 0.71);
+            z-index: 0;
+        }
+
+        #contacto>* {
+            position: relative;
+            z-index: 1;
         }
 
         .faq-container {
@@ -2447,9 +2634,9 @@
            ============================================ */
         .proyectos-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 1.5rem;
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 3rem auto 0;
         }
 
@@ -2549,10 +2736,101 @@
         }
 
         /* ============================================
+           WEB FULL WIDTH - TODAS LAS PANTALLAS
+           Solo afecta web/desktop (min-width: 769px)
+        ============================================ */
+        @media (min-width: 769px) {
+
+            /* === 35: SERVICIOS 6 columnas horizontales, sin carrusel === */
+            #servicios>div[style] {
+                max-width: 100% !important;
+                padding: 0 !important;
+                display: grid !important;
+                grid-template-columns: repeat(6, 1fr) !important;
+                gap: 1.5rem !important;
+                margin-top: 2rem !important;
+            }
+
+            #servicios>div[style]>button {
+                display: none !important;
+            }
+
+            #servicios>div[style]>div[style*="display: flex; justify-content: center; gap: 10px"] {
+                display: none !important;
+            }
+
+            #serviciosPage1,
+            #serviciosPage2 {
+                display: contents !important;
+            }
+
+            #servicios .service-card {
+                padding: 2rem 1.2rem !important;
+            }
+
+            /* === 36: POR QUÉ ELEGIRNOS 6 columnas horizontales, sin carrusel === */
+            .why-choose-us>div[style*="max-width"] {
+                max-width: 100% !important;
+                padding: 0 !important;
+                display: grid !important;
+                grid-template-columns: repeat(6, 1fr) !important;
+                gap: 1.5rem !important;
+            }
+
+            .why-choose-us>div[style*="max-width"]>button {
+                display: none !important;
+            }
+
+            .why-choose-us>div[style*="max-width"]>div[style*="display: flex; justify-content: center; gap: 10px"] {
+                display: none !important;
+            }
+
+            #beneficiosPage1,
+            #beneficiosPage2 {
+                display: contents !important;
+            }
+
+            .why-choose-us .benefit-card {
+                padding: 2rem 1.2rem !important;
+            }
+
+            /* === 37: TESTIMONIOS full width === */
+            #testimonios {
+                max-width: none !important;
+                width: 100% !important;
+            }
+
+            /* === 38: OFERTAS full width === */
+            #ofertas {
+                max-width: none !important;
+                width: 100% !important;
+            }
+        }
+
+        /* ============================================
            RESPONSIVE MÓVIL FINAL V4
            NO ALTERA WEB/PC/LAPTOP
         ============================================ */
         @media (max-width: 768px) {
+
+            /* === FIX OVERFLOW MÓVIL === */
+            html,
+            body {
+                overflow-x: hidden !important;
+                width: 100% !important;
+            }
+
+            section {
+                max-width: 100% !important;
+                overflow-x: hidden !important;
+                box-sizing: border-box !important;
+            }
+
+            #ofertas {
+                width: 100% !important;
+                margin-left: 0 !important;
+                border-radius: 0 !important;
+            }
 
             /* === MENÚ más junto === */
             .nav-menu {
@@ -2604,13 +2882,16 @@
                 gap: 0.4rem !important;
                 margin-bottom: 0.8rem !important;
                 flex-direction: row !important;
+                justify-content: center !important;
             }
 
             .hero-buttons .cta-button {
-                padding: 0.4rem 0.8rem !important;
-                font-size: 0.6rem !important;
-                letter-spacing: 0.3px !important;
-                gap: 0.3rem !important;
+                padding: 0.35rem 0.6rem !important;
+                font-size: 0.55rem !important;
+                letter-spacing: 0.2px !important;
+                gap: 0.2rem !important;
+                border-width: 1.5px !important;
+                border-radius: 30px !important;
             }
 
             .hero-stats {
@@ -3505,27 +3786,27 @@
                     <div class="gallery-container">
                         <!-- Aquí pones las fotos de Urbanización Las Torres de HUARAL -->
                         <div class="gallery-slide">
-                            <img src="imagenes/propiedades/torres_de_huaral/tarjeta/anuncio_1.webp"
+                            <img src="imagenes/propiedades/torres_de_huaral/tarjeta/huaral-1.webp"
                                 alt="Los Pinos HURAL - Entrada principal">
                         </div>
                         <div class="gallery-slide">
-                            <img src="imagenes/propiedades/torres_de_huaral/tarjeta/anuncio_2.webp"
+                            <img src="imagenes/propiedades/torres_de_huaral/tarjeta/huaral-2.webp"
                                 alt="Los Pinos HURAL - Lotes disponibles">
                         </div>
                         <div class="gallery-slide">
-                            <img src="imagenes/propiedades/torres_de_huaral/tarjeta/anuncio_3.webp"
+                            <img src="imagenes/propiedades/torres_de_huaral/tarjeta/huaral-3.webp"
                                 alt="Los Pinos HURAL - Áreas verdes">
                         </div>
                         <div class="gallery-slide">
-                            <img src="imagenes/propiedades/torres_de_huaral/tarjeta/anuncio_4.webp"
+                            <img src="imagenes/propiedades/torres_de_huaral/tarjeta/huaral-4.webp"
                                 alt="Los Pinos HURAL - Plano maestro">
                         </div>
                         <div class="gallery-slide">
-                            <img src="imagenes/propiedades/torres_de_huaral/tarjeta/anuncio_5.webp"
+                            <img src="imagenes/propiedades/torres_de_huaral/tarjeta/huaral-5.webp"
                                 alt="Los Pinos HURAL - Vista aérea">
                         </div>
                         <div class="gallery-slide">
-                            <img src="imagenes/propiedades/torres_de_huaral/tarjeta/anuncio_6.webp"
+                            <img src="imagenes/propiedades/torres_de_huaral/tarjeta/huaral-6.webp"
                                 alt="Los Pinos HURAL - total aérea">
                         </div>
                     </div>
@@ -4712,15 +4993,11 @@
                         class="fab fa-facebook"></i></a>
                 <a href="https://www.instagram.com/rae_asesor_inm/" target="_blank" title="Instagram"><i
                         class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/TU-PERFIL" target="_blank" title="LinkedIn"><i
+                <a href="https://www.linkedin.com/in/rayda-adriano-544b943b1/" target="_blank" title="LinkedIn"><i
                         class="fab fa-linkedin"></i></a>
             </div>
             <p>&copy; 2024 Asesoría Inmobiliaria Premium. Todos los derechos reservados.</p>
-            <p>📧 <a
-                    href="/cdn-cgi/l/email-protection#502231357e312335233f22393e3d3f32393c393122393f10373d31393c7e333f3d"><span
-                        class="__cf_email__"
-                        data-cfemail="cfbdaeaae1aebcaabca0bda6a1a2a0ada6a3a6aebda6a08fa8a2aea6a3e1aca0a2">[email&#160;protected]</span></a>
-                | 📱 +51
+            <p>📧 <a href="mailto:rae.asesorinmobiliario@gmail.com">rae.asesorinmobiliario@gmail.com</a> | 📱 +51
                 934917794</p>
         </div>
     </footer>
@@ -4733,6 +5010,7 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
@@ -5464,6 +5742,18 @@
             });
         });
 
+        // Cerrar menú al tocar fuera
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') &&
+                !navMenu.contains(e.target) &&
+                !navToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+                const icon = navToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
         // ============================================
         // ANIMACIÓN DE CONTEO DE ESTADÍSTICAS
         // ============================================
@@ -5818,15 +6108,23 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- FORZAR PÁGINAS VISIBLES EN MÓVIL -->
+    <!-- FORZAR PÁGINAS VISIBLES EN MÓVIL Y WEB -->
     <script>
-        function ajustarParaMovil() {
-            if (window.innerWidth <= 768) {
-                var sp2 = document.getElementById('serviciosPage2');
-                var bp2 = document.getElementById('beneficiosPage2');
-                if (sp2) sp2.style.setProperty('display', 'contents', 'important');
-                if (bp2) bp2.style.setProperty('display', 'contents', 'important');
-                var sp1 = document.getElementById('serviciosPage1');
-                var bp1 = document.getElementById('beneficiosPage1');
-                if (sp1) sp1.style.setProperty('display', 'contents', 'important');
-    
+        function ajustarPaginas() {
+            var sp1 = document.getElementById('serviciosPage1');
+            var sp2 = document.getElementById('serviciosPage2');
+            var bp1 = document.getElementById('beneficiosPage1');
+            var bp2 = document.getElementById('beneficiosPage2');
+            // Siempre forzar display:contents para que CSS grid funcione
+            if (sp1) sp1.style.setProperty('display', 'contents', 'important');
+            if (sp2) sp2.style.setProperty('display', 'contents', 'important');
+            if (bp1) bp1.style.setProperty('display', 'contents', 'important');
+            if (bp2) bp2.style.setProperty('display', 'contents', 'important');
+        }
+        document.addEventListener('DOMContentLoaded', ajustarPaginas);
+        window.addEventListener('resize', ajustarPaginas);
+    </script>
+
+</body>
+
+</html>
